@@ -74,13 +74,10 @@ spec:
           volumeMounts:
             - name: jenkins-home
               mountPath: /var/jenkins_home
-      accessModes:
-        - ReadWriteOnce
-      hostPath:
-        path: "/data/pv-jenkins"
       volumes:
         - name: jenkins-home
-          emptyDir: {}
+          hostPath:
+            path: /home/centos/jenkins
           #awsElasticBlockStore:
           #  volumeID: 
 ---
